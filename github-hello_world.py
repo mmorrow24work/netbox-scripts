@@ -3,7 +3,7 @@ from extras.scripts import Script
 
 class HelloWorld(Script):
     class Meta:
-        name = "Hello World"
+        name = "Hello World from github.com"
         description = "A minimal NetBox Custom Script example."
 
     def run(self, data, commit):
