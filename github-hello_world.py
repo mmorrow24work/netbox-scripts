@@ -1,7 +1,7 @@
 from extras.scripts import Script
 
 
-class github-HelloWorld(Script):
+class githubHelloWorld(Script):
     class Meta:
         name = "Hello World from github.com"
         description = "A minimal NetBox Custom Script example."
