@@ -3,7 +3,7 @@ from django.utils import timezone
 from dcim.models import Device, Site
 from extras.models import JournalEntry
 
-class CountDevicesJob2(Script):
+class v4CountDevicesJob(Script):
     class Meta:
         name = "Count Devices (DB)"
         description = "Counts devices and stores a dated history entry."
