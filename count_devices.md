@@ -8,6 +8,32 @@ export NETBOX_URL="http://localhost:8080"
 export NETBOX_API_TOKEN="nbt_GBMhCDhhfGyg.EnjV1Yc2fYbWUq3oQpecIJTP7B82aMMKSsr6cOOW"
 ```
 
+```python
+#!/usr/bin/env python3
+
+import os
+import sys
+import pynetbox
+
+def main():
+    netbox_url = os.getenv("NETBOX_URL", "http://localhost:8080")
+    netbox_token = os.getenv("NETBOX_API_TOKEN")
+
+    if not netbox_token:
+        print("ERROR: NETBOX_API_TOKEN environment variable not set", file=sys.stderr)
+        sys.exit(1)
+
+    nb = pynetbox.api(
+        netbox_url,
+        token=netbox_token
+    )
+
+    device_count = nb.dcim.devices.count()
+    print(f"Total devices in NetBox: {device_count}")
+
+if __name__ == "__main__":
+    main()
+```
 
 ```bash
 mickm@ubuntu24-2:~/git/netbox-docker$ python3 -m venv netbox-venv
@@ -42,33 +68,6 @@ Successfully installed certifi-2026.4.22 charset_normalizer-3.4.7 idna-3.13 pack
 (netbox-venv) mickm@ubuntu24-2:~/git/netbox-docker$ 
 (netbox-venv) mickm@ubuntu24-2:~/git/netbox-docker$ export NETBOX_URL="http://localhost:8080"
 (netbox-venv) mickm@ubuntu24-2:~/git/netbox-docker$ export NETBOX_API_TOKEN="nbt_GBMhCDhhfGyg.EnjV1Yc2fYbWUq3oQpecIJTP7B82aMMKSsr6cOOW"
-(netbox-venv) mickm@ubuntu24-2:~/git/netbox-docker$
-(netbox-venv) mickm@ubuntu24-2:~/git/netbox-docker$ cat count_devices.py
-#!/usr/bin/env python3
-
-import os
-import sys
-import pynetbox
-
-def main():
-    netbox_url = os.getenv("NETBOX_URL", "http://localhost:8080")
-    netbox_token = os.getenv("NETBOX_API_TOKEN")
-
-    if not netbox_token:
-        print("ERROR: NETBOX_API_TOKEN environment variable not set", file=sys.stderr)
-        sys.exit(1)
-
-    nb = pynetbox.api(
-        netbox_url,
-        token=netbox_token
-    )
-
-    device_count = nb.dcim.devices.count()
-    print(f"Total devices in NetBox: {device_count}")
-
-if __name__ == "__main__":
-    main()
-(netbox-venv) mickm@ubuntu24-2:~/git/netbox-docker$
 (netbox-venv) mickm@ubuntu24-2:~/git/netbox-docker$ python3 count_devices.py
 Total devices in NetBox: 90
 (netbox-venv) mickm@ubuntu24-2:~/git/netbox-docker$
