@@ -1,0 +1,20 @@
+{
+  "data_sources": [
+    {
+      "name": "netbox-community-customizations",
+      "type": "git",
+      "source_url": "https://github.com/netbox-community/customizations.git",
+      "enabled": true,
+      "parameters": { "branch": "master" },
+      "ignore_rules": ""
+    },
+    {
+      "name": "netbox-zero-to-hero",
+      "type": "git",
+      "source_url": "https://github.com/netbox-community/netbox-zero-to-hero.git",
+      "enabled": true,
+      "parameters": { "branch": "main" },
+      "ignore_rules": ""
+    }
+  ]
+}
