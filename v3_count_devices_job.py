@@ -16,7 +16,7 @@ class CountDevicesJob2(Script):
         self.log_success(f"{today} - Total devices in NetBox: {count}")
 
         # Anchor history to an existing Site
-        site = Site.objects.get(name="Global")
+        site = Site.objects.get(name="netbox-docker")
 
         JournalEntry.objects.create(
             assigned_object=site,
