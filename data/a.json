@@ -1,0 +1,44 @@
+{
+  "data_sources": [
+    {
+      "name": "netbox-community-customizations",
+      "type": "git",
+      "source_url": "https://github.com/netbox-community/customizations.git",
+      "enabled": true,
+      "parameters": { "branch": "master" },
+      "ignore_rules": ""
+    },
+    {
+      "name": "netbox-zero-to-hero",
+      "type": "git",
+      "source_url": "https://github.com/netbox-community/netbox-zero-to-hero.git",
+      "enabled": true,
+      "parameters": { "branch": "main" },
+      "ignore_rules": ""
+    },
+    {
+      "name": "barbarossatm-netbox-scripts",
+      "type": "git",
+      "source_url": "https://github.com/BarbarossaTM/netbox-scripts.git",
+      "enabled": true,
+      "parameters": { "branch": "master" },
+      "ignore_rules": ""
+    },
+    {
+      "name": "falz-netbox-device-scripts",
+      "type": "git",
+      "source_url": "https://github.com/falz/netbox-device-scripts.git",
+      "enabled": true,
+      "parameters": { "branch": "main" },
+      "ignore_rules": ""
+    },
+    {
+      "name": "bogdancordos-netbox-scripts",
+      "type": "git",
+      "source_url": "https://github.com/bogdancordos/netbox_scripts.git",
+      "enabled": true,
+      "parameters": { "branch": "main" },
+      "ignore_rules": ""
+    }
+  ]
+}
