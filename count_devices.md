@@ -6,6 +6,7 @@ source ./netbox-venv/bin/activate
 pip install pynetbox
 export NETBOX_URL="http://localhost:8080"
 export NETBOX_API_TOKEN="nbt_GBMhCDhhfGyg.EnjV1Yc2fYbWUq3oQpecIJTP7B82aMMKSsr6cOOW"
+python3 count_devices.py
 ```
 
 ```python
